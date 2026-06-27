@@ -1,0 +1,334 @@
+Account Statement
+01 May 2026 - 31 May 2026
+Prashanth B N Account No. 3651375930
+Account Type Savings
+CRN xxxxxx510
+Branch Banagalore - Kanakpura Road
+No15 2nd Cross Doctors Colony
+Account Status Active
+Soudhamini,Telephone Exchange
+Nominee Registered Yes
+Road,Konanakutte
+Bengaluru - 560062 Currency INDIAN RUPEE
+Karnataka - India
+MICR 560485116 IFSC Code KKBK0008344
+Savings Account Transactions
+# Date Description Chq/Ref. No. Withdrawal (Dr.) Deposit (Cr.) Balance
+- - Opening Balance - - - 32,898.87
+1 01 May 2026 UPI/SAROVARA/612117249687/PaidViaKotakA UPI-612197313647 799.00 32,099.87
+pp
+2 01 May 2026 UPI/IDC UPI-612197850755 50.00 32,049.87
+KITCHEN/612117260815/PaidViaKotakApp
+3 02 May 2026 UPI/MOBIL SERVICE UPI-612254630262 120.00 31,929.87
+S/612213097770/PaidViaKotakApp
+4 02 May 2026 UPI/ZOMATO/103217234008/Collect Transac UPI-612256350950 213.57 31,716.30
+5 02 May 2026 UPI/CFST20014736@cu/612213147189/PaidVi UPI-612258506033 65.00 31,651.30
+aKotakApp
+6 02 May 2026 UPI/CAFESHREECOOLCO/612214172254/PaidV UPI-612260392497 70.00 31,581.30
+iaKotakApp
+7 02 May 2026 UPI/GEETHA SHREE UPI-612262321988 80.00 31,501.30
+N/612214216064/PaidViaKotakApp
+8 02 May 2026 UPI/ETERNAL LIMITED/612215959237/Pay via UPI-612265298959 150.00 31,351.30
+Razorpa
+9 02 May 2026 UPI/ETERNAL LIMITED/612217024921/Pay via UPI-612270497155 1,738.75 29,612.55
+Razorpa
+10 02 May 2026 UPI/GEETHA SHREE UPI-612273788645 70.00 29,542.55
+N/612217404677/PaidViaKotakApp
+11 02 May 2026 UPI/TIMMAIAH UPI-612276239239 30.00 29,512.55
+JAYALA/612218450629/PaidViaKotakApp
+12 03 May 2026 UPI/Indian Oil UPI-612335771031 600.00 28,912.55
+Petr/612314607291/PaidViaKotakApp
+13 03 May 2026 UPI/Halle UPI-612337124877 530.00 28,382.55
+JonneJaya/612315623158/PaidViaKotakApp
+14 03 May 2026 UPI/Halle UPI-612338099634 50.00 28,332.55
+JonneJaya/612315634346/PaidViaKotakApp
+15 03 May 2026 UPI/GEETHA SHREE N/109735206552/na UPI-612352843391 190.00 28,522.55
+16 04 May 2026 UPI/BMTC/612409082775/BMTCPassTPASS26 UPI-612484436480 1,200.00 27,322.55
+17 04 May 2026 UPI/T H RAMESH/612410808044/Pay to UPI-612488377537 33.37 27,289.18
+BharatPe
+18 04 May 2026 UPI/SVC SRI VASAVI UPI-612439887367 115.00 27,174.18
+/612422681200/PaidViaKotakApp
+19 05 May 2026 NACH-10-DR-INCRED FINANCIAL SER- NACHDB050526012122 11,885.00 15,289.18
+VNXUAXZRGPDGNP 98
+20 05 May 2026 UPI/VASANTH KUMAR H/649155173371/UPI UPI-612573538987 2,000.00 17,289.18
+21 05 May 2026 UPI/VASANTH KUMAR H/649125996880/UPI UPI-612577208377 225.00 17,514.18
+Statement Generated on 26 Jun 2026, 19:48 Page 1 of 7
+PRASHANTH B N
+Account No. 3651375930
+Account Statement 01 May 2026 - 31 May 2026
+Savings Account Transactions
+# Date Description Chq/Ref. No. Withdrawal (Dr.) Deposit (Cr.) Balance
+22 05 May 2026 UPI/VASANTH KUMAR H/612524501372/UPI UPI-612591691199 250.00 17,764.18
+23 05 May 2026 UPI/KRISHNEGOWDA/612519452492/PaidViaK UPI-612599690210 30.00 17,734.18
+otakApp
+24 05 May 2026 UPI/GEETHA SHREE N/612520531907/Slice UPI-612505240457 2,000.00 15,734.18
+25 05 May 2026 UPI/Fibe/713244429877/5512499650 UPI-612505354273 3,571.00 12,163.18
+26 05 May 2026 UPI/GEETHA SHREE N/109751992991/na UPI-612508801857 2,000.00 14,163.18
+27 05 May 2026 UPI/GEETHA SHREE UPI-612508891364 2,000.00 12,163.18
+N/612521575791/PaidViaKotakApp
+28 06 May 2026 UPI/CHETHAN GOWDA UPI-612633850131 3,000.00 9,163.18
+S/612611943405/PaidViaKotakApp
+29 06 May 2026 UPI/GEETHA SHREE UPI-612662630415 70.00 9,093.18
+N/612618341281/PaidViaKotakApp
+30 06 May 2026 UPI/GEETHA SHREE N/109758689106/na UPI-612667675815 45.00 9,138.18
+31 07 May 2026 UPI/HOSMANE UPI-612735138272 60.00 9,078.18
+KITCHEN/612718429045/PaidViaKotakApp
+32 07 May 2026 UPI/HOSMANE UPI-612735322015 65.00 9,013.18
+KITCHEN/612718431550/PaidViaKotakApp
+33 07 May 2026 UPI/SARA FUEL UPI-612738018976 70.00 8,943.18
+PARK/612719476359/PaidViaKotakApp
+34 08 May 2026 UPI/CHETHAN GOWDA S/612841916792/cafe UPI-612860337969 4,700.00 13,643.18
+du and i h
+35 08 May 2026 UPI/CHETHAN GOWDA S/612811959358/Resto UPI-612875554044 850.00 12,793.18
+36 08 May 2026 UPI/CHETHAN GOWDA S/612811962665/20k UPI-612875797958 700.00 12,093.18
+Interest Fe
+37 08 May 2026 UPI/Sri Nageshwara UPI-612883827136 350.00 11,743.18
+/612813069488/PaidViaKotakApp
+38 08 May 2026 UPI/HOTEL GURU UPI-612887431224 120.00 11,623.18
+SRI/612814117825/PaidViaKotakApp
+39 08 May 2026 UPI/HOTEL MAYURA UPI-612898737966 510.00 11,113.18
+RI/612817264974/PaidViaKotakApp
+40 08 May 2026 UPI/SRI RANGA UPI-612899408048 350.00 10,763.18
+AMARA/612817274044/PaidViaKotakApp
+41 08 May 2026 UPI/SHIVALLI UPI-612803058241 40.00 10,723.18
+RESTAU/612818322716/PaidViaKotakApp
+42 08 May 2026 Recd:IMPS/612829066670/DREAMPURSE/KKB IMPS-612821961347 21,262.00 31,985.18
+K/X4277/PaidV
+43 08 May 2026 PG FPL TECHNOLOGIES PRI KPG-0246971618 21,261.27 10,723.91
+44 09 May 2026 UPI/BANASHANKARI UPI-612952156426 110.00 10,613.91
+EN/612912941728/PaidViaKotakApp
+45 09 May 2026 UPI/LULUINTERNATION/612915079459/Pay To UPI-612962394568 50.00 10,563.91
+LULUINTE
+46 09 May 2026 UPI/MC UPI-612967175261 92.00 10,471.91
+DONALDS/612916140694/PaidViaKotakApp
+47 09 May 2026 UPI/CHETHAN GOWDA UPI-612970185284 155.00 10,316.91
+S/612917179561/PaidViaKotakApp
+48 09 May 2026 UPI/Aasaithambi UPI-612970654085 80.00 10,236.91
+/612917186226/PaidViaKotakApp
+49 09 May 2026 UPI/Aasaithambi UPI-612970714417 20.00 10,216.91
+/612917186907/PaidViaKotakApp
+50 09 May 2026 UPI/ANANDA UPI-612970926480 10.00 10,206.91
+S/612917189690/PaidViaKotakApp
+51 09 May 2026 UPI/GEETHA SHREE N/109780035992/plant UPI-612997361468 200.00 10,406.91
+and sleep
+52 10 May 2026 UPI/Default/613016090981/PaidViaKotakApp UPI-613038106685 850.00 9,556.91
+53 11 May 2026 UPI/CHETHAN GOWDA UPI-613195963026 4,225.00 13,781.91
+S/356248055645/Payment from Ph
+54 11 May 2026 CREDIT CARD PAYMENT VPI-132599558 10,946.93 2,834.98
+55 12 May 2026 UPI/JRB Fuel UPI-613253666605 100.00 2,734.98
+Juncti/613209584537/PaidViaKotakApp
+56 12 May 2026 UPI/NICE Limited UPI-613254115706 30.00 2,704.98
+Statement Generated on 26 Jun 2026, 19:48 Page 2 of 7
+PRASHANTH B N
+Account No. 3651375930
+Account Statement 01 May 2026 - 31 May 2026
+Savings Account Transactions
+# Date Description Chq/Ref. No. Withdrawal (Dr.) Deposit (Cr.) Balance
+A8/613209589641/PaidViaKotakApp
+57 12 May 2026 UPI/Paytm/613215874570/PaidViaKotakApp UPI-613276592126 80.00 2,624.98
+58 13 May 2026 UPI/Mr Geetha Shree/613394361874/Payment UPI-613377303252 1,500.00 4,124.98
+from sl
+59 13 May 2026 UPI/Passport Seva UPI-613377445043 1,500.00 2,624.98
+P/613322091392/MOPSUPITxn
+60 13 May 2026 UPI/UIDAI/613322103699/UpdateAadhaarOn UPI-613378756421 75.00 2,549.98
+61 13 May 2026 UPI/UIDAI/613323108789/UpdateAadhaarOn UPI-613379268194 75.00 2,474.98
+62 14 May 2026 UPI/XXXPGN KOTAK 81/613409214303/Cash UPI-613491099846 1,000.00 1,474.98
+63 14 May 2026 UPI/MOBIL SERVICE UPI-613411850903 110.00 1,364.98
+S/613414465287/PaidViaKotakApp
+64 14 May 2026 UPI/Cafe Udupi UPI-613414922506 200.00 1,164.98
+Ruch/613415503273/PaidViaKotakApp
+65 14 May 2026 UPI/MR PALAGATI UPI-613416374205 80.00 1,084.98
+SUN/613416521023/PaidViaKotakApp
+66 15 May 2026 MB:SENT MONEY TO OWN 3645208459 KMBT15052614222219 150.00 934.98
+00
+67 15 May 2026 UPI/SONA /650123775717/UPI UPI-613519056465 1,600.00 2,534.98
+68 16 May 2026 UPI/Halle UPI-613650368872 70.00 2,464.98
+JonneJaya/613614106405/PaidViaKotakApp
+69 16 May 2026 UPI/Lulu Daily Bang/613616183548/Payment UPI-613656697793 127.00 2,337.98
+for 154
+70 16 May 2026 UPI/BY 2 UPI-613661503916 30.00 2,307.98
+COFFEE/613617246967/PaidViaKotakApp
+71 16 May 2026 UPI/SONA /613621933018/UPI UPI-613688720264 2,500.00 4,807.98
+72 16 May 2026 UPI/NAGENDRA UPI-613688827138 4,000.00 807.98
+S/613623565676/PaidViaKotakApp
+73 17 May 2026 UPI/BRAHMINS UPI-613717630627 70.00 737.98
+THATTE/613714880364/PaidViaKotakApp
+74 17 May 2026 UPI/K261 ORIAN UPI-613727201687 520.35 217.63
+MALL/613716982235/PaidViaKotakApp
+75 17 May 2026 UPI/IDC UPI-613732302907 50.00 167.63
+KITCHEN/613718040421/PaidViaKotakApp
+76 18 May 2026 UPI/SONA /123314936391/UPI UPI-613877190213 1,000.00 1,167.63
+77 18 May 2026 UPI/S ARJUN/613819934364/PaidViaKotakApp UPI-613809449224 350.00 817.63
+78 19 May 2026 UPI/SONA /613912752237/UPI UPI-613928608744 1,300.00 2,117.63
+79 19 May 2026 UPI/HOT N UPI-613953921746 40.00 2,077.63
+COOL/613914437561/PaidViaKotakApp
+80 19 May 2026 UPI/SONA /123372739527/UPI UPI-613954829876 1,200.00 3,277.63
+81 19 May 2026 UPI/NAGENDRA UPI-613986148611 3,114.00 163.63
+S/613921831225/PaidViaKotakApp
+82 20 May 2026 UPI/VAIKUNTA PURE UPI-614016566997 11.00 152.63
+V/614013175839/PaidViaKotakApp
+83 20 May 2026 UPI/HOT N UPI-614030806171 30.00 122.63
+COOL/614017350169/PaidViaKotakApp
+84 21 May 2026 UPI/VAIKUNTA PURE UPI-614183881834 84.00 38.63
+V/614113961719/PaidViaKotakApp
+85 22 May 2026 UPI/GEETHA SHREE N/109859840627/na UPI-614237454228 300.00 338.63
+86 22 May 2026 UPI/SONA /614215218852/UPI UPI-614250740737 150.00 488.63
+87 22 May 2026 UPI/New Udupi UPI-614251868785 70.00 418.63
+Garde/614213781954/PaidViaKotakApp
+88 22 May 2026 UPI/DAVANAGERE UPI-614272272001 103.00 315.63
+BENN/614218031582/PaidViaKotakApp
+89 23 May 2026 UPI/MR PALAGATI UPI-614332343274 100.00 215.63
+SUN/614317739728/PaidViaKotakApp
+90 23 May 2026 UPI/Vinod Kumar UPI-614359231753 50.00 165.63
+S/614322062368/PaidViaKotakApp
+91 24 May 2026 UPI/SVC SRI VASAVI UPI-614497149465 70.00 95.63
+/614416527072/PaidViaKotakApp
+Statement Generated on 26 Jun 2026, 19:48 Page 3 of 7
+PRASHANTH B N
+Account No. 3651375930
+Account Statement 01 May 2026 - 31 May 2026
+Savings Account Transactions
+# Date Description Chq/Ref. No. Withdrawal (Dr.) Deposit (Cr.) Balance
+92 25 May 2026 UPI/Attibele UPI-614542544356 25.00 70.63
+Electr/614510022079/PaidViaKotakApp
+93 26 May 2026 UPI/SONA /123710004017/UPI UPI-614604331236 1,000.00 1,070.63
+94 26 May 2026 UPI/GSR and KSS UPI-614621705744 50.00 1,020.63
+VEN/614613941726/PaidViaKotakApp
+95 26 May 2026 UPI/NAMMA UPI-614648307082 80.00 940.63
+ADIGAS/614620265731/PaidViaKotakApp
+96 26 May 2026 UPI/SONA /123753920345/UPI UPI-614660320047 1,100.00 2,040.63
+97 26 May 2026 UPI/NAGENDRA S/614623395051/Milk 26th UPI-614660406714 2,000.00 40.63
+May
+98 27 May 2026 UPI/VAIKUNTA PURE UPI-614786577821 33.00 7.63
+V/614713679780/PaidViaKotakApp
+99 28 May 2026 UPI/SONA /123852208593/UPI UPI-614888640232 2,300.00 2,307.63
+100 28 May 2026 UPI/SWIGGY INSTAMAR/651403692342/Paid UPI-614888751158 248.00 2,059.63
+via CRED
+101 28 May 2026 REV-UPI/SWIGGY INSTAM/651403692342/TXN UPI-614890625383 248.00 2,307.63
+FAILED AT
+102 28 May 2026 UPI/NAGENDRA UPI-614891102586 2,300.00 7.63
+S/614823891963/Bhavishprovisio
+103 29 May 2026 UPI/SONA /651572359369/UPI UPI-614909255758 1,000.00 1,007.63
+104 29 May 2026 UPI/ARYEN MARKETING/614912136150/Pay To UPI-614912694191 1,000.00 7.63
+ARYEN MA
+105 29 May 2026 UPI/GEETHA SHREE N/109904040526/na UPI-614920884409 19.00 26.63
+106 29 May 2026 MB:BILLPAY FOR JIO PREPAID 0595758088 EBPP-0595758088 19.00 7.63
+107 29 May 2026 UPI/HOT N UPI-614923539328 1.00 6.63
+COOL/614915273170/PaidViaKotakApp
+108 29 May 2026 EDUQUITY FCM-260529N6JDCX 29,076.00 29,082.63
+109 29 May 2026 UPI/ZOMATO/103369703929/Collect Transac UPI-614928836851 265.38 28,817.25
+110 29 May 2026 UPI/NICE Limited UPI-614932819529 30.00 28,787.25
+A1/614918396563/PaidViaKotakApp
+111 29 May 2026 UPI/SONA /123904048421/UPI UPI-614955620575 1,100.00 29,887.25
+112 30 May 2026 UPI/Indian Oil UPI-615067433118 1,000.00 28,887.25
+Petr/615009808402/PaidViaKotakApp
+113 30 May 2026 UPI/SHREE PANJURLI UPI-615077649119 170.00 28,717.25
+/615012971371/PaidViaKotakApp
+114 30 May 2026 UPI/SHEETYS UPI-615085216522 872.00 27,845.25
+RED/615014064084/PaidViaKotakApp
+115 30 May 2026 UPI/PhonePeMerchant/615016130529/PaidVia UPI-615090480201 120.00 27,725.25
+KotakApp
+116 31 May 2026 UPI/Baneshwari UPI-615131818966 37.00 27,688.25
+medi/615108736252/PaidViaKotakApp
+117 31 May 2026 UPI/Praveen Kumar UPI-615132035620 80.00 27,608.25
+T/615108738710/PaidViaKotakApp
+118 31 May 2026 UPI/JAYAMMA WOF UPI-615132137355 70.00 27,538.25
+KRI/615108739663/PaidViaKotakApp
+119 31 May 2026 UPI/MUHAMMED UPI-615141089794 150.00 27,388.25
+SALEEL/615111888607/PaidViaKotakApp
+120 31 May 2026 UPI/H AND H UPI-615141239469 200.00 27,188.25
+PHARMA/615111890701/PaidViaKotakApp
+121 31 May 2026 UPI/Bhavani UPI-615146889271 200.00 26,988.25
+Petrole/615113964545/PaidViaKotakApp
+122 31 May 2026 MB:BILLPAY FOR JIO PREPAID 0595882546 EBPP-0595882546 19.00 26,969.25
+123 31 May 2026 UPI/SHIVALLI UPI-615154970796 280.00 26,689.25
+RESTAU/615115085040/PaidViaKotakApp
+124 31 May 2026 UPI/Naturals RR UPI-615162979654 90.00 26,599.25
+Nag/615117190380/PaidViaKotakApp
+125 31 May 2026 UPI/Mr K S UPI-615169595000 125.00 26,474.25
+Madhusud/615119273114/PaidViaKotakApp
+126 31 May 2026 UPI/SWIGGY/615123584093/PaidViaKotakApp UPI-615190186894 65.00 26,409.25
+Statement Generated on 26 Jun 2026, 19:48 Page 4 of 7
+PRASHANTH B N
+Account No. 3651375930
+Account Statement 01 May 2026 - 31 May 2026
+Savings Account Transactions
+# Date Description Chq/Ref. No. Withdrawal (Dr.) Deposit (Cr.) Balance
+127 31 May 2026 UPI/LAXMI NARAYAN UPI-615190224308 20.00 26,389.25
+C/615123584229/PaidViaKotakApp
+Statement Generated on 26 Jun 2026, 19:48 Page 5 of 7
+PRASHANTH B N
+Account No. 3651375930
+Account Statement 01 May 2026 - 31 May 2026
+Account Summary
+Particulars Opening Balance Closing Balance
+Savings Account (SA): 32,898.87 26,389.25
+End of Statement
+Any discrepancy in the statement should be brought to the notice of Kotak Mahindra Bank Ltd. within
+one month from the date of receipt of the statement.
+This is a system generated report and does not require signature and stamp.
+For assistance, reach out to us at:
+Contact Us Branch Address Branch Phone Number
+1800 4100 Kotak Mahindra Bank Ltd, 3517-A 4th H Block 6th Stage,Banashankari, 918884123792
+(Toll-free number) Off Kanakpura Road Bangalore, Bangalore-560062, Karnataka, India
+Remember!
+Scan for
+Never share personal/sensitive information like PIN, CVV, OTP more safe
+banking tips
+or passwords with anyone.
+Kotak Mahindra Bank Ltd. | CIN: L65110MH1985PLC038137
+Registered Office: 27 BKC, C 27, G Block, Bandra Kurla Complex, Bandra (E), Mumbai - 400 051. www.kotak.bank.in
+Statement Generated on 26 Jun 2026, 19:48 Page 6 of 7
+PRASHANTH B N
+Account No. 3651375930
+Account Statement 01 May 2026 - 31 May 2026
+Important Information
+RBI mandates Positive Pay for high-value cheques from Jan 1, 2021. Customers must submit cheque details via Net/Mobile Banking or at the branch on
+the day of issuance or before handing it to the beneficiary. For more details, visit www.kotak.bank.in.
+From October 4, 2025, same-day cheque clearing will be implemented across all banks. Cheques will be credited or debited within a few hours of
+issuance.
+Complimentary insurance cover on Kotak Debit Cards (linked to Saving and Current accounts) will be discontinued w.e.f. July 20, 2025. All claims will be
+accepted until July 20, 2025, as per the existing process. Salary account holders may view their insurance covers under Debit Card Services in the Cards
+& FASTag section on the web portal. For any queries related to Debit Card insurance, write to dc.insurance@kotak.com or visit
+https://www.kotak.bank.in/en/personal-banking /cards/debit-cards/debit-card-services/insurnace-on-debit-card.html
+TDS is applicable from time to time as per the Income Tax Act, 2025 (IT Act) and Income Tax Rules, 2026. Currently, TDS is deducted when the aggregate
+interest paid / credited across all FDs, RDs exceeds the threshold limit of Rs. 50,000/- for residents and Rs. 1,00,000/- for resident senior citizens in a
+financial year (FY) for a customer.
+You can avail a Tax Deduction at Source (TDS) exemption on the interest earned on your existing or new Fixed Deposits for the current financial year by
+submitting Form 121 (earlier Form 15G/15H). This exemption is available if you are eligible and the total interest earned on your bank deposits in a
+financial year exceeds the TDS exemption threshold. If the total interest earned on your bank deposits is below the TDS exemption threshold,
+submission of Form 121 is not required. A fresh Form 121 must be submitted at the beginning of each financial year for Fixed Deposits and Recurring
+Deposits.
+RBI, vide its circular DOR.CRE.REC.23/21.08.008/2022-23 dated April 19, 2022, has issued guidelines pertaining to the opening and maintenance of
+Current Account(s) of customers who have availed various credit facilities from the banking system. The term "banking system" refers to Scheduled
+Commercial Banks and Payments Banks. Banks (whether lending banks or otherwise) are required to monitor all Current Account, Overdraft, and Cash
+Credit accounts on a regular basis, at least on a half-yearly frequency. This monitoring must specifically consider the aggregate exposure of the banking
+system to the borrower vis-à-vis the individual bank's share in that exposure, in order to ensure compliance with the said instructions. Detailed
+guidelines are available in the aforementioned circular.
+Deposits of up to ₹5,00,000 per depositor are fully insured by the Deposit Insurance and Credit Guarantee Corporation, under the Deposit Insurance
+Scheme.
+Keep your account active for uninterrupted access to your funds: Inoperative accounts can be easily reactivated by submitting a signed request along
+with valid KYC documents. For details, please click https://www.kotak.bank.in/en/reach-us.html
+Registering a nominee is strongly recommended: A nominee can help your family access funds lying in your inoperative account smoothly. In the event
+of the account holder’s demise, the nominee may visit our nearest branch with the required documents for verification and settlement of claims.
+Goods and Services Tax (GST), at the applicable rate of 18%, is levied on relevant service charges.
+Dear Customer, any inaccurate, incomplete or false disclosure of statement of financial transaction or reportable account by you would lead to penal
+consequence on the Bank under applicable law. The Bank shall be entitled to recover from you such amount levied due to such inaccuracy,
+incompleteness or false disclosure. You will indemnify the Bank in respect of all or any liabilities incurred by Bank, by reason of any of the information or
+particulars given by you, being incorrect or false or being suppressed or omitted.
+Please note: This statement/ advice should not be construed as a Tax Invoice under the Goods and Services Tax Act.
+Commonly Used Narrations
+AP - Autopay for Billpay Netcard - Netc@rd transaction
+ATL - ATM withdrawal done from other bank ATM machine OS - Online Shopping transaction
+ATW - ATM withdrawal done from Kotak ATM machine OT - Online Trading transaction via Payment Gateway
+BP - Bill Pay transaction PB - Transaction done through Phone Banking (IVR)
+CDM - Kotak Cash Deposit Machine PCI/PCD - POS transaction
+CMS - Cash Management Service RTGS - Real Time Gross Settlement
+IB - Transaction done on Kotak Net Banking UPI - Unified Payment Interface
+IMPS - Immediate Payment Service VISACCPAY - Visa Credit Card Payment
+IMT - Instant Money Transfer VMT - VISA Money Transfer
+KB - Billpay transaction via Keya Chatbot WB - Billpay transaction via WhatsApp Banking
+MB - Transaction done on Mobile banking Int. Pd. - Interest credited on your savings account balance
+NACH - National Automated Clearing House Sweep transfer to - Booking new Term Deposit
+NEFT - National Electronic Funds Transfer Sweep transfer from - Broken existing Term Deposit
+Statement Generated on 26 Jun 2026, 19:48 Page 7 of 7
