@@ -1,6 +1,7 @@
 // Small reusable UI primitives shared across pages.
 
 import { useEffect } from 'react';
+import { createPortal } from 'react-dom';
 
 export function Modal({ open, onClose, title, children, maxWidth = 460 }) {
   useEffect(() => {
@@ -15,24 +16,25 @@ export function Modal({ open, onClose, title, children, maxWidth = 460 }) {
   }, [open, onClose]);
 
   if (!open) return null;
-  return (
+  return createPortal(
     <div
       role="dialog" aria-modal="true" aria-label={title}
       onMouseDown={(e) => e.target === e.currentTarget && onClose()}
       style={{
         position: 'fixed', inset: 0, background: 'transparent',
-        display: 'flex', alignItems: 'flex-start', justifyContent: 'center',
-        padding: '32px 16px', zIndex: 80, overflowY: 'auto',
+        display: 'flex', alignItems: 'center', justifyContent: 'center',
+        padding: '20px 16px', zIndex: 1000,
       }}
     >
-      <div className="card" style={{ width: '100%', maxWidth, padding: 0, overflow: 'visible', boxShadow: 'none' }}>
+      <div className="card" style={{ width: '100%', maxWidth, maxHeight: 'calc(100dvh - 40px)', padding: 0, overflow: 'hidden', boxShadow: 'none', display: 'flex', flexDirection: 'column' }}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '16px 20px', borderBottom: '1px solid var(--line)', flexShrink: 0 }}>
           <h3 style={{ fontSize: 17 }}>{title}</h3>
           <button className="btn ghost" aria-label="Close" onClick={onClose} style={{ fontSize: 18, lineHeight: 1, padding: '4px 8px' }}>×</button>
         </div>
-        <div style={{ padding: 20 }}>{children}</div>
+        <div style={{ padding: 20, overflowY: 'auto', minHeight: 0 }}>{children}</div>
       </div>
-    </div>
+    </div>,
+    document.body,
   );
 }
 

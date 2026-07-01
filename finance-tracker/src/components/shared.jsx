@@ -4,6 +4,35 @@
 import { useState, useEffect } from 'react';
 import { Modal, Field } from './ui.jsx';
 import { INCOME_CATEGORIES, EXPENSE_CATEGORIES, todayISO } from '../lib/domain.js';
+import { useData } from '../store/DataContext.jsx';
+
+export function CategorySelect({ type, value, onChange, exclude = [] }) {
+  const { customCategories, addCategory } = useData();
+  const defaults = type === 'income' ? INCOME_CATEGORIES : EXPENSE_CATEGORIES;
+  const categories = [...new Set([...defaults, ...(customCategories[type] || [])])]
+    .filter(c => !exclude.includes(c) || c === value);
+
+  function createCategory() {
+    const name = window.prompt(`New ${type} category name:`);
+    if (name == null) return;
+    const result = addCategory(type, name);
+    if (!result.ok) {
+      window.alert(result.reason === 'duplicate' ? 'Category already exists.' : 'Enter a category name.');
+      return;
+    }
+    onChange(result.category);
+  }
+
+  return (
+    <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
+      <select className="select" value={value} onChange={e => onChange(e.target.value)} style={{ flex: 1 }}>
+        <option value="">Select...</option>
+        {categories.map(c => <option key={c} value={c}>{c}</option>)}
+      </select>
+      <button type="button" className="btn" onClick={createCategory} style={{ whiteSpace: 'nowrap' }}>+ New</button>
+    </div>
+  );
+}
 
 export function PageHeader({ title, subtitle, action }) {
   return (
@@ -32,7 +61,6 @@ export function TransactionModal({ open, onClose, onSave, initial, lockType }) {
     }
   }, [open, initial, lockType]);
 
-  const cats = form.type === 'income' ? INCOME_CATEGORIES : EXPENSE_CATEGORIES;
   const set = (k) => (e) => setForm(f => ({ ...f, [k]: e.target.value }));
 
   function save() {
@@ -74,10 +102,7 @@ export function TransactionModal({ open, onClose, onSave, initial, lockType }) {
         <input className="input" type="number" step="0.01" min="0" value={form.amount} onChange={set('amount')} placeholder="0.00" autoFocus />
       </Field>
       <Field label="Category">
-        <select className="select" value={form.category} onChange={set('category')}>
-          <option value="">Select…</option>
-          {cats.map(c => <option key={c} value={c}>{c}</option>)}
-        </select>
+        <CategorySelect type={form.type} value={form.category} onChange={category => setForm(f => ({ ...f, category }))} />
       </Field>
       <Field label="Date">
         <input className="input" type="date" value={form.date} onChange={set('date')} />

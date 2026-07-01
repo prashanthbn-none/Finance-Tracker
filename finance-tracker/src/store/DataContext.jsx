@@ -20,6 +20,7 @@ export function DataProvider({ children }) {
   const [budgets, setBudgets] = useState([]);
   const [goals, setGoals] = useState([]);
   const [recurring, setRecurring] = useState([]);
+  const [customCategories, setCustomCategories] = useState({ income: [], expense: [] });
   const [dismissed, setDismissed] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -28,6 +29,7 @@ export function DataProvider({ children }) {
     if (!user) {
       setStore(null);
       setTransactions([]); setBudgets([]); setGoals([]); setRecurring([]);
+      setCustomCategories({ income: [], expense: [] });
       setLoading(false);
       return;
     }
@@ -37,12 +39,13 @@ export function DataProvider({ children }) {
     setLoading(true);
 
     (async () => {
-      const [tx, bg, gl, rc, dm] = await Promise.all([
+      const [tx, bg, gl, rc, dm, cc] = await Promise.all([
         adapter.list('transactions'),
         adapter.list('budgets'),
         adapter.list('goals'),
         adapter.list('recurring'),
         adapter.getMeta('dismissedAlerts'),
+        adapter.getMeta('customCategories'),
       ]);
       if (!alive) return;
 
@@ -66,6 +69,7 @@ export function DataProvider({ children }) {
       setGoals(gl);
       setRecurring(updated);
       setDismissed(dm || []);
+      setCustomCategories(cc || { income: [], expense: [] });
       setLoading(false);
     })();
 
@@ -186,6 +190,17 @@ export function DataProvider({ children }) {
     if (store) store.setMeta('dismissedAlerts', next);
   }, [dismissed, store]);
 
+  const addCategory = useCallback((type, name) => {
+    const clean = String(name || '').trim().replace(/\s+/g, ' ');
+    if (!clean) return { ok: false, reason: 'empty' };
+    const list = customCategories[type] || [];
+    if (list.some(c => c.toLowerCase() === clean.toLowerCase())) return { ok: false, reason: 'duplicate' };
+    const next = { ...customCategories, [type]: [...list, clean] };
+    setCustomCategories(next);
+    if (store) store.setMeta('customCategories', next);
+    return { ok: true, category: clean };
+  }, [customCategories, store]);
+
   const replaceAllData = useCallback(async ({ transactions: tx = [], budgets: bg = [], goals: gl = [], recurring: rc = [] }) => {
     setTransactions(tx);
     setBudgets(bg);
@@ -205,22 +220,23 @@ export function DataProvider({ children }) {
     setBudgets([]);
     setGoals([]);
     setRecurring([]);
+    setCustomCategories({ income: [], expense: [] });
     setDismissed([]);
     if (store) await store.clearAll();
   }, [store]);
 
   const value = useMemo(() => ({
     loading,
-    transactions, budgets, goals, recurring, dismissed,
+    transactions, budgets, goals, recurring, dismissed, customCategories,
     addTransaction, addTransactions, updateTransaction, deleteTransaction,
     setBudget, deleteBudget,
     addGoal, updateGoal, contributeToGoal, deleteGoal,
     addRecurring, updateRecurring, deleteRecurring,
-    dismissAlert, replaceAllData, resetAllData,
-  }), [loading, transactions, budgets, goals, recurring, dismissed,
+    dismissAlert, replaceAllData, resetAllData, addCategory,
+  }), [loading, transactions, budgets, goals, recurring, dismissed, customCategories,
     addTransaction, addTransactions, updateTransaction, deleteTransaction, setBudget, deleteBudget,
     addGoal, updateGoal, contributeToGoal, deleteGoal,
-    addRecurring, updateRecurring, deleteRecurring, dismissAlert, replaceAllData, resetAllData]);
+    addRecurring, updateRecurring, deleteRecurring, dismissAlert, replaceAllData, resetAllData, addCategory]);
 
   return <DataContext.Provider value={value}>{children}</DataContext.Provider>;
 }

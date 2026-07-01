@@ -29,9 +29,8 @@ const HEADER_HINTS = {
 
 export function parseStatement(text) {
   if (/\d[\d,]*\.\d{2}\((?:Dr|Cr)\)/i.test(text)) return parsePlainTextStatement(text, true);
-  if (/Opening Balance/i.test(text) && /Withdrawal\s*\(Dr\.?\).*Deposit\s*\(Cr\.?\).*Balance/is.test(text)) {
-    return parseRunningBalanceStatement(text);
-  }
+  const balanceRows = parseRunningBalanceStatement(text);
+  if (balanceRows.length) return balanceRows;
 
   const rows = parseDelimited(text);
   if (rows.length < 2) return parsePlainTextStatement(text);
@@ -139,42 +138,42 @@ function parseRunningBalanceStatement(text) {
     .map(line => line.replace(/\s+/g, ' ').trim())
     .filter(Boolean);
 
-  let previousBalance = 0;
-  const opening = lines.find(line => /Opening Balance/i.test(line));
-  const openingMatch = opening?.match(/([\d,]+\.\d{2})\s*$/);
-  if (openingMatch) previousBalance = parseAmount(openingMatch[1]);
+  let previousBalance = null;
+  const opening = lines.find(line => /\b(opening\s*(?:balance|bal)|balance\s*(?:b\/f|brought\s+forward))\b/i.test(line));
+  const openingAmounts = opening ? moneyTokensUniversal(opening) : [];
+  if (openingAmounts.length) previousBalance = openingAmounts.at(-1).value;
 
   const out = [];
   lines.forEach(line => {
     const row = parseRunningBalanceLine(line, previousBalance);
     if (!row) return;
     previousBalance = row.balance;
-    out.push(row.transaction);
+    if (row.transaction) out.push(row.transaction);
   });
   return out;
 }
 
 function parseRunningBalanceLine(line, previousBalance) {
-  const match = line.match(/^(?:\d+\s+)?(\d{1,2}\s+[A-Za-z]{3,9}\s+\d{4})\s+(.+)$/);
+  const match = line.match(/^(?:\d+\s+)?(\d{1,2}[-/]\d{1,2}[-/]\d{2,4}|\d{4}[-/]\d{1,2}[-/]\d{1,2}|\d{1,2}[\s-]+[A-Za-z]{3,9}[\s-]+\d{2,4})\s+(.+)$/);
   if (!match) return null;
 
   const date = parseDate(match[1]);
   if (!date) return null;
 
   const rest = match[2];
-  const amounts = [...rest.matchAll(/\d[\d,]*\.\d{2}/g)]
-    .map(m => ({ raw: m[0], index: m.index || 0, value: parseAmount(m[0]) }))
-    .filter(m => m.value > 0);
+  const amounts = moneyTokensUniversal(rest);
   if (amounts.length < 2) return null;
 
   const balance = amounts.at(-1).value;
   const listedAmount = amounts.at(-2).value;
+  if (previousBalance === null) return { balance, transaction: null };
   const delta = Math.round((balance - previousBalance) * 100) / 100;
-  if (!previousBalance || delta === 0) return null;
+  if (delta === 0) return null;
 
   const type = delta > 0 ? 'income' : 'expense';
   const amount = Math.abs(delta);
-  const finalAmount = Math.abs(amount - listedAmount) <= 0.02 ? listedAmount : amount;
+  if (Math.abs(amount - listedAmount) > 0.05) return null;
+  const finalAmount = listedAmount;
   const note = rest
     .slice(0, amounts.at(-2).index)
     .replace(/\b(UPI|IMPS|NACH|NEFT|RTGS|KPG|NACHDB|MB)-\S+/ig, '')
@@ -191,6 +190,31 @@ function parseRunningBalanceLine(line, previousBalance) {
       note: note || 'Bank statement import',
     },
   };
+}
+
+function moneyTokensLegacy(input) {
+  return [...String(input || '').matchAll(/(?:₹|Rs\.?|INR)?\s*-?\(?\d[\d,]*(?:\.\d{1,2})\)?(?:\s*(?:Dr|Cr))?/gi)]
+    .map(m => ({
+      raw: m[0],
+      index: m.index || 0,
+      value: parseAmount(m[0]),
+      tag: /\bcr\b/i.test(m[0]) ? 'cr' : /\bdr\b/i.test(m[0]) ? 'dr' : '',
+    }))
+    .filter(m => m.value > 0 && /[.,]|\b(?:dr|cr)\b/i.test(m.raw));
+}
+
+function moneyTokensUniversal(input) {
+  if (!input) return moneyTokensLegacy(input);
+  return [...String(input || '').matchAll(/(?:\u20b9|Rs\.?|INR)?\s*-?\(?\d[\d,]*(?:\.\d{1,2})\)?(?:\s*(?:Dr|Cr))?/gi)]
+    .map(m => {
+      const numeric = m[0].replace(/[^\d.,-]/g, '').replace(/,/g, '');
+      return {
+        raw: m[0],
+        index: m.index || 0,
+        value: Math.abs(Number.parseFloat(numeric)),
+      };
+    })
+    .filter(m => Number.isFinite(m.value) && m.value > 0 && /[.,]|\b(?:dr|cr)\b/i.test(m.raw));
 }
 
 function parseStatementLine(line, taggedOnly = false) {
@@ -254,11 +278,12 @@ function parseDate(input) {
   const iso = raw.match(/^(\d{4})[-/](\d{1,2})[-/](\d{1,2})$/);
   if (iso) return `${iso[1]}-${iso[2].padStart(2, '0')}-${iso[3].padStart(2, '0')}`;
 
-  const monthName = raw.match(/^(\d{1,2})\s+([A-Za-z]{3,9})\s+(\d{4})$/);
+  const monthName = raw.match(/^(\d{1,2})[\s-]+([A-Za-z]{3,9})[\s-]+(\d{2,4})$/);
   if (monthName) {
     const months = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'];
     const month = months.indexOf(monthName[2].slice(0, 3).toLowerCase()) + 1;
-    if (month > 0) return `${monthName[3]}-${String(month).padStart(2, '0')}-${monthName[1].padStart(2, '0')}`;
+    const year = monthName[3].length === 2 ? `20${monthName[3]}` : monthName[3];
+    if (month > 0) return `${year}-${String(month).padStart(2, '0')}-${monthName[1].padStart(2, '0')}`;
   }
 
   const match = raw.match(/^(\d{1,2})[-/](\d{1,2})[-/](\d{2,4})$/);

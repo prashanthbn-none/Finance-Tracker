@@ -62,19 +62,34 @@ export function exportExcel(filename, columns, rows, title) {
 // Print a specific DOM node (by ref) as PDF via the browser print dialog.
 export function printNode(node, title = 'Report') {
   if (!node) { window.print(); return; }
-  const win = window.open('', '_blank', 'width=900,height=1100');
-  if (!win) { window.print(); return; } // popup blocked — fall back
+  const frame = document.createElement('iframe');
+  frame.setAttribute('title', 'Print preview');
+  Object.assign(frame.style, { position: 'fixed', width: '1px', height: '1px', right: '0', bottom: '0', border: '0' });
+  document.body.appendChild(frame);
+  const win = frame.contentWindow;
   const styles = Array.from(document.querySelectorAll('style, link[rel="stylesheet"]'))
     .map(n => n.outerHTML).join('\n');
   win.document.write(
     `<!doctype html><html><head><meta charset="utf-8"><title>${title}</title>${styles}
      <style>
-       body { background: #fff; padding: 32px; }
+       html, body { background: #fff !important; color: #17211d !important; }
+       body { padding: 0; }
+       .card { break-inside: avoid; box-shadow: none !important; }
+       button, select { display: none !important; }
        @page { margin: 16mm; }
      </style></head><body>${node.outerHTML}</body></html>`
   );
   win.document.close();
-  // Give styles/fonts a moment, then print.
-  win.onload = () => { win.focus(); win.print(); };
-  setTimeout(() => { try { win.focus(); win.print(); } catch { /* ignore */ } }, 400);
+  const print = async () => {
+    try {
+      await win.document.fonts?.ready;
+      await new Promise(resolve => setTimeout(resolve, 500));
+      win.focus();
+      win.print();
+    } finally {
+      setTimeout(() => frame.remove(), 1000);
+    }
+  };
+  if (win.document.readyState === 'complete') print();
+  else win.addEventListener('load', print, { once: true });
 }

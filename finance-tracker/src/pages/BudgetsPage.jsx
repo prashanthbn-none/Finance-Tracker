@@ -3,9 +3,9 @@
 import { useState, useMemo } from 'react';
 import { useData } from '../store/DataContext.jsx';
 import { useMoney } from '../hooks/useMoney.js';
-import { PageHeader } from '../components/shared.jsx';
+import { PageHeader, CategorySelect } from '../components/shared.jsx';
 import { Modal, Field, ProgressBar, EmptyState } from '../components/ui.jsx';
-import { EXPENSE_CATEGORIES, monthKey, monthLabel, colorFor } from '../lib/domain.js';
+import { monthKey, monthLabel, colorFor } from '../lib/domain.js';
 import { budgetStatus } from '../lib/selectors.js';
 
 function recentMonths(n = 6) {
@@ -29,7 +29,6 @@ export default function BudgetsPage() {
 
   const status = useMemo(() => budgetStatus(budgets, transactions, month), [budgets, transactions, month]);
   const usedCats = status.map(b => b.category);
-  const available = EXPENSE_CATEGORIES.filter(c => !usedCats.includes(c));
 
   const totalLimit = status.reduce((s, b) => s + b.limit, 0);
   const totalSpent = status.reduce((s, b) => s + b.spent, 0);
@@ -52,7 +51,7 @@ export default function BudgetsPage() {
             <select className="select" value={month} onChange={e => setMonth(e.target.value)} style={{ width: 'auto' }}>
               {recentMonths().map(m => <option key={m} value={m}>{monthLabel(m)}</option>)}
             </select>
-            <button className="btn primary" onClick={() => { setModal(true); setError(''); }} disabled={!available.length}>+ Add budget</button>
+            <button className="btn primary" onClick={() => { setModal(true); setError(''); }}>+ Add budget</button>
           </div>
         }
       />
@@ -79,7 +78,7 @@ export default function BudgetsPage() {
           <EmptyState
             title={`No budgets for ${monthLabel(month)}`}
             body="Add a category limit to start tracking spending against a target."
-            action={available.length ? <button className="btn primary" onClick={() => setModal(true)}>+ Add budget</button> : null}
+            action={<button className="btn primary" onClick={() => setModal(true)}>+ Add budget</button>}
           />
         </div>
       ) : (
@@ -113,10 +112,7 @@ export default function BudgetsPage() {
         {error && <div style={{ background: 'var(--clay-bg)', color: 'var(--clay)', padding: '9px 12px', borderRadius: 'var(--radius-s)', fontSize: 14, marginBottom: 14 }}>{error}</div>}
         <p className="muted" style={{ fontSize: 13, marginTop: 0 }}>For {monthLabel(month)}</p>
         <Field label="Category">
-          <select className="select" value={form.category} onChange={e => setForm(f => ({ ...f, category: e.target.value }))}>
-            <option value="">Select…</option>
-            {[...new Set([form.category, ...available].filter(Boolean))].map(c => <option key={c} value={c}>{c}</option>)}
-          </select>
+          <CategorySelect type="expense" value={form.category} exclude={usedCats} onChange={category => setForm(f => ({ ...f, category }))} />
         </Field>
         <Field label="Monthly limit">
           <input className="input" type="number" step="0.01" min="0" value={form.limit} onChange={e => setForm(f => ({ ...f, limit: e.target.value }))} placeholder="0.00" />

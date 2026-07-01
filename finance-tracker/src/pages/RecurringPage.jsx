@@ -4,9 +4,9 @@
 import { useState, useEffect } from 'react';
 import { useData } from '../store/DataContext.jsx';
 import { useMoney } from '../hooks/useMoney.js';
-import { PageHeader } from '../components/shared.jsx';
+import { PageHeader, CategorySelect } from '../components/shared.jsx';
 import { Modal, Field, EmptyState } from '../components/ui.jsx';
-import { INCOME_CATEGORIES, EXPENSE_CATEGORIES, todayISO, colorFor } from '../lib/domain.js';
+import { todayISO, colorFor } from '../lib/domain.js';
 
 const FREQ = { weekly: 'Weekly', monthly: 'Monthly', yearly: 'Yearly' };
 
@@ -78,7 +78,6 @@ function RuleModal({ state, onClose, onSave }) {
     setError('');
   }, [state.open, state.rule]);
 
-  const cats = form.type === 'income' ? INCOME_CATEGORIES : EXPENSE_CATEGORIES;
   const set = (k) => (e) => setForm(f => ({ ...f, [k]: e.target.value }));
 
   function save() {
@@ -110,10 +109,7 @@ function RuleModal({ state, onClose, onSave }) {
         <input className="input" type="number" step="0.01" min="0" value={form.amount} onChange={set('amount')} placeholder="0.00" />
       </Field>
       <Field label="Category">
-        <select className="select" value={form.category} onChange={set('category')}>
-          <option value="">Select…</option>
-          {cats.map(c => <option key={c} value={c}>{c}</option>)}
-        </select>
+        <CategorySelect type={form.type} value={form.category} onChange={category => setForm(f => ({ ...f, category }))} />
       </Field>
       <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
         <div style={{ flex: '1 1 160px' }}><Field label="Frequency"><select className="select" value={form.frequency} onChange={set('frequency')}>{Object.entries(FREQ).map(([v, l]) => <option key={v} value={v}>{l}</option>)}</select></Field></div>
