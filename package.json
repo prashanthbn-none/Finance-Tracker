@@ -4,12 +4,15 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "dev": "npm --prefix finance-tracker run dev",
+    "dev:app": "npm --prefix finance-tracker run dev:app",
+    "otp-server": "npm --prefix finance-tracker run otp-server",
+    "build": "npm --prefix finance-tracker run build",
+    "lint": "npm --prefix finance-tracker run lint",
+    "preview": "npm --prefix finance-tracker run preview"
   },
   "dependencies": {
+    "pdfjs-dist": "^6.1.200",
     "react": "^19.2.6",
     "react-dom": "^19.2.6",
     "react-router-dom": "^7.18.0",

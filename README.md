@@ -1,79 +1,71 @@
-# Ledger — Personal Finance Tracker
+# RupeeFlow Finance Tracker
 
-A web-based personal finance tracker built with React + Vite. Manage income,
-expenses, budgets, savings goals, and recurring transactions, with reports and
-analytics. Data is stored locally in the browser, behind a storage abstraction
-designed so a real backend (e.g. Firebase) can be added later without rewriting
-feature code.
+RupeeFlow is an INR-first personal finance web app built with React and Vite. It helps users manage income, expenses, budgets, savings goals, recurring transactions, reports, and imported bank-statement transactions.
 
 ## Features
 
-- **Authentication** — register, login/logout, password reset, profile (local only)
-- **Dark mode** — light / dark / follow-system, with no flash on load
-- **Dashboard** — balance, monthly income/expense/savings, income-vs-expense trend chart, category breakdown, budget status, recent activity
-- **Income & expense management** — add / edit / delete, categorized, with notes
-- **Transaction history** — search; filter by type, category, date range, and amount; sort; bulk select & delete; CSV/Excel export
-- **Budgets** — monthly per-category limits with color-coded progress, remaining amounts, and over-budget warnings
-- **Savings goals** — target amount + date, circular progress rings, contributions, completion badges
-- **Reports & analytics** — bar (income vs expense), line (net trend), and pie (category) charts over 3/6/12 months; CSV/Excel export; print-to-PDF
-- **Recurring transactions** — salary, rent, subscriptions; auto-materialized when due
-- **Notifications** — budget alerts, bill reminders, goal milestones (in-app bell)
-- **Settings** — theme, display currency (applied app-wide), data export, JSON backup & restore
-- **Responsive** — works on mobile/tablet with a hamburger drawer
+- Local registration, login, profile, and email OTP password recovery
+- Cumulative overall balance with separate monthly income and expense summaries
+- Income and expense add, edit, delete, search, filter, and custom categories
+- PDF/CSV bank-statement import with India-focused categorization
+- Duplicate transaction prevention
+- Monthly budgets and overspending alerts
+- Savings goals and contributions
+- Recurring salary, rent, bill, and subscription transactions
+- Reports with charts and CSV/Excel/PDF export
+- 30-day cash-flow forecast and reminders
+- INR-only display, responsive layout, and light/dark/system themes
+- JSON backup and restore
 
-## Run it
+## Technology
+
+- React 19
+- Vite
+- React Router
+- React Context
+- IndexedDB
+- PDF.js
+- Recharts
+- Node.js and Nodemailer for OTP email delivery
+
+## Run locally
 
 ```bash
 npm install
-npm run dev      # start dev server (usually http://localhost:5173)
-npm run build    # production build into dist/
-npm run preview  # serve the production build
+npm run dev
+```
+
+Open `http://localhost:5173`.
+
+Production checks:
+
+```bash
+npm run lint
+npm run build
 ```
 
 ## Project structure
 
-```
-src/
-  store/        React context providers
-    AuthContext.jsx     accounts + session
-    DataContext.jsx     loads collections, exposes CRUD
-    SettingsContext.jsx theme + display currency
-  hooks/
-    useMoney.js         currency-aware money formatter
-  lib/
-    storage.js          storage adapter (the backend-swap point)
-    domain.js           categories, colors, currency + date helpers
-    recurring.js        recurring-rule -> transactions materialization
-    selectors.js        pure derived-data calculations (totals, trends, alerts)
-    export.js           CSV / Excel / print-to-PDF helpers (no dependencies)
-  pages/          one file per screen
-  components/      AppShell (nav/layout), icons, shared UI
-  styles/global.css  design tokens + light & dark themes
+```text
+finance-tracker/
+  server/                 OTP email service
+  src/
+    components/           Shared UI and application shell
+    hooks/                Reusable React hooks
+    lib/                  Finance logic, storage, imports, and exports
+    pages/                Route-level screens
+    store/                Authentication, finance data, and settings contexts
+    styles/               Global design system
+    App.jsx               Routes and providers
+    main.jsx              Application entry point
 ```
 
-## Moving to a backend later (Firebase, Supabase, etc.)
+## Data and security
 
-All persistence goes through a `StorageAdapter` (see `src/lib/storage.js`).
-Today `createStorage()` returns a `LocalStorageAdapter`. To use a server,
-implement an adapter with the same async methods and return it from
-`createStorage()` — no page or context code needs to change.
+Finance records are stored per user in browser IndexedDB. Account/session data is local to the browser. OTP email delivery uses a small Node.js service and SMTP credentials from a private environment file. SMTP secrets must never be committed.
 
-### Firebase sketch
+This project is suitable for academic demonstration and personal local use. Production deployment would require server-side authentication, authorization, managed storage, HTTPS, and stronger operational security.
 
-1. Create a Firebase project, enable Firestore and (optionally) Google sign-in.
-2. `npm install firebase`, add your config to a new `src/lib/firebase.js`.
-3. Write a `FirestoreAdapter` implementing the same methods as
-   `LocalStorageAdapter`, reading/writing per-user collections.
-4. Return it from `createStorage()`.
-5. For Google login, swap the local auth in `AuthContext.jsx` for Firebase Auth's
-   `signInWithPopup(GoogleAuthProvider)`.
+## Bank-statement limitation
 
-These steps need your own Firebase account and API keys, which is why they aren't
-pre-wired.
-
-## Security note
-
-This is a front-end-only demo. Accounts and password hashes live in the
-browser's localStorage, which is **not secure** — it's a stand-in for real auth.
-A production build must move authentication server-side and hash passwords with
-bcrypt or argon2. The code is structured to make that swap clean.
+RupeeFlow supports selectable-text statements matching known layouts. Scanned PDFs require OCR, and universal compatibility with every Indian bank format is not guaranteed.
