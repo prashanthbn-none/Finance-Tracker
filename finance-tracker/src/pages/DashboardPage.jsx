@@ -11,7 +11,7 @@ import { StatCard, ProgressBar, EmptyState } from '../components/ui.jsx';
 import TransactionList from '../components/TransactionList.jsx';
 import { monthKey, monthLabel, colorFor } from '../lib/domain.js';
 import {
-  totals,
+  accountBalance,
   totalsForMonth,
   budgetStatus,
   spendByCategory,
@@ -31,7 +31,7 @@ export default function DashboardPage() {
   const money = useMoney();
   const mKey = monthKey(new Date());
 
-  const allTotals = totals(transactions);
+  const allTotals = accountBalance(transactions);
   const month = totalsForMonth(transactions, mKey);
   const savings = sum(goals.map(g => ({ amount: g.saved || 0 })));
 
@@ -56,7 +56,7 @@ export default function DashboardPage() {
       />
 
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 14, marginBottom: 22 }}>
-        <StatCard label="Total balance" value={money(allTotals.balance)} tone={allTotals.balance >= 0 ? 'pos' : 'neg'} sub="income minus expenses" />
+        <StatCard label="Total balance" value={money(allTotals.balance)} tone={allTotals.balance >= 0 ? 'pos' : 'neg'} />
         <StatCard label="Income this month" value={money(month.income)} tone="pos" />
         <StatCard label="Spent this month" value={money(month.expense)} tone="neg" />
         <StatCard label="Savings rate" value={`${Math.round(savingsRate.rate * 100)}%`} tone={savingsRate.rate >= 0.2 ? 'pos' : savingsRate.rate < 0 ? 'neg' : undefined} sub={`${money(month.balance)} net this month`} />

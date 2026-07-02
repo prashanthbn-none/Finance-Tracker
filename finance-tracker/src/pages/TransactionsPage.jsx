@@ -109,7 +109,7 @@ export default function TransactionsPage() {
       const added = addTransactions(fresh);
       setImportStatus(added
         ? `Imported ${added} transaction${added === 1 ? '' : 's'} from statement.`
-        : parsed.length ? 'Statement already imported. No new transactions found.' : 'No transactions found. Try an unlocked PDF statement with selectable text.');
+        : parsed.length ? 'Statement already imported. No duplicate transactions added.' : 'No transactions found. Try an unlocked PDF statement with selectable text.');
     } catch {
       setImportStatus('Could not read this statement. Use an unlocked PDF downloaded from net banking.');
     }

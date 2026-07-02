@@ -17,6 +17,15 @@ export function totalsForMonth(transactions, mKey) {
   return totals(transactions.filter(t => monthKey(t.date) === mKey));
 }
 
+// Running account balance across every completed transaction. Future-dated
+// entries are excluded until their date arrives.
+export function accountBalance(transactions, asOf = new Date()) {
+  const cutoff = asOf instanceof Date
+    ? asOf.toISOString().slice(0, 10)
+    : String(asOf).slice(0, 10);
+  return totals(transactions.filter(t => t.date && t.date <= cutoff));
+}
+
 // Sum of expenses per category for a given month.
 export function spendByCategory(transactions, mKey) {
   const out = {};
